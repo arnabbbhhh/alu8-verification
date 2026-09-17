@@ -1,0 +1,46 @@
+$ python run_regression.py --vectors 416 --seed 4471
+streaming stimulus: 16 directed, 400 randomised
+  [PASS] vec 0000  op=ADD  a=0x00 b=0x00  dut=0x00 ref=0x00
+  [PASS] vec 0001  op=ADD  a=0xFF b=0xFF  dut=0xFE ref=0xFE
+  [PASS] vec 0002  op=SUB  a=0x05 b=0x05  dut=0x00 ref=0x00
+  [PASS] vec 0003  op=SUB  a=0x03 b=0x09  dut=0xFA ref=0xFA
+  [PASS] vec 0004  op=AND  a=0x00 b=0x00  dut=0x00 ref=0x00
+  [PASS] vec 0005  op=AND  a=0xFF b=0xFF  dut=0xFF ref=0xFF
+  [FAIL] vec 0014  op=SRA  a=0x80 b=0x00  dut=0x40 ref=0xC0  <-- mismatch
+  [FAIL] vec 0366  op=SRA  a=0x90 b=0x37  dut=0x48 ref=0xC8  <-- mismatch
+  [FAIL] vec 0368  op=SRA  a=0x91 b=0x3E  dut=0x48 ref=0xC8  <-- mismatch
+  [FAIL] vec 0371  op=SRA  a=0x8F b=0x32  dut=0x47 ref=0xC7  <-- mismatch
+  [FAIL] vec 0373  op=SRA  a=0x81 b=0x6F  dut=0x40 ref=0xC0  <-- mismatch
+  [FAIL] vec 0375  op=SRA  a=0xB7 b=0xAE  dut=0x5B ref=0xDB  <-- mismatch
+  [FAIL] vec 0378  op=SRA  a=0xBC b=0x55  dut=0x5E ref=0xDE  <-- mismatch
+  [FAIL] vec 0381  op=SRA  a=0xB8 b=0x8A  dut=0x5C ref=0xDC  <-- mismatch
+  [FAIL] vec 0383  op=SRA  a=0x84 b=0xFC  dut=0x42 ref=0xC2  <-- mismatch
+  [FAIL] vec 0384  op=SRA  a=0xE3 b=0x5B  dut=0x71 ref=0xF1  <-- mismatch
+  [FAIL] vec 0385  op=SRA  a=0x8F b=0xB5  dut=0x47 ref=0xC7  <-- mismatch
+  [FAIL] vec 0386  op=SRA  a=0xAC b=0xE1  dut=0x56 ref=0xD6  <-- mismatch
+  [FAIL] vec 0387  op=SRA  a=0xC1 b=0x9D  dut=0x60 ref=0xE0  <-- mismatch
+  [FAIL] vec 0388  op=SRA  a=0xAD b=0x4F  dut=0x56 ref=0xD6  <-- mismatch
+  [FAIL] vec 0389  op=SRA  a=0xD6 b=0xEC  dut=0x6B ref=0xEB  <-- mismatch
+  [FAIL] vec 0390  op=SRA  a=0xE0 b=0xD2  dut=0x70 ref=0xF0  <-- mismatch
+  [FAIL] vec 0392  op=SRA  a=0xE2 b=0xEE  dut=0x71 ref=0xF1  <-- mismatch
+  [FAIL] vec 0395  op=SRA  a=0xAE b=0x52  dut=0x57 ref=0xD7  <-- mismatch
+  [FAIL] vec 0396  op=SRA  a=0xF1 b=0xC9  dut=0x78 ref=0xF8  <-- mismatch
+  [FAIL] vec 0397  op=SRA  a=0xC1 b=0x68  dut=0x60 ref=0xE0  <-- mismatch
+  [FAIL] vec 0399  op=SRA  a=0x8F b=0x64  dut=0x47 ref=0xC7  <-- mismatch
+  [FAIL] vec 0400  op=SRA  a=0x97 b=0xB9  dut=0x4B ref=0xCB  <-- mismatch
+  [FAIL] vec 0401  op=SRA  a=0x80 b=0x0E  dut=0x40 ref=0xC0  <-- mismatch
+  [FAIL] vec 0402  op=SRA  a=0xFB b=0xC7  dut=0x7D ref=0xFD  <-- mismatch
+  [FAIL] vec 0403  op=SRA  a=0x82 b=0xA8  dut=0x41 ref=0xC1  <-- mismatch
+  [FAIL] vec 0404  op=SRA  a=0x8D b=0x78  dut=0x46 ref=0xC6  <-- mismatch
+  [FAIL] vec 0407  op=SRA  a=0xB8 b=0xDD  dut=0x5C ref=0xDC  <-- mismatch
+  [FAIL] vec 0408  op=SRA  a=0xA3 b=0xD7  dut=0x51 ref=0xD1  <-- mismatch
+  [FAIL] vec 0409  op=SRA  a=0xB4 b=0xBD  dut=0x5A ref=0xDA  <-- mismatch
+  [FAIL] vec 0411  op=SRA  a=0x92 b=0x1F  dut=0x49 ref=0xC9  <-- mismatch
+  [FAIL] vec 0412  op=SRA  a=0xA5 b=0xC4  dut=0x52 ref=0xD2  <-- mismatch
+  [FAIL] vec 0413  op=SRA  a=0xF8 b=0x52  dut=0x7C ref=0xFC  <-- mismatch
+  [FAIL] vec 0414  op=SRA  a=0xDC b=0xEB  dut=0x6E ref=0xEE  <-- mismatch
+...
+383/416 passed · 33 bug(s) logged · coverage 87.5%
+bug_0001: SRA mismatch on vector 14 (bucket=negative): a=0b10000000 b=0b00000000 -> dut=0b01000000 ref=0b11000000
+bug_0002: SRA mismatch on vector 366 (bucket=negative): a=0b10010000 b=0b00110111 -> dut=0b01001000 ref=0b11001000
+bug_0003: SRA mismatch on vector 368 (bucket=negative): a=0b10010001 b=0b00111110 -> dut=0b01001000 ref=0b11001000

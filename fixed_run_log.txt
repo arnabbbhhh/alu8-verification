@@ -1,0 +1,10 @@
+$ python run_regression.py --vectors 416 --seed 4471
+streaming stimulus: 16 directed, 400 randomised
+  [PASS] vec 0000  op=ADD  a=0x00 b=0x00  dut=0x00 ref=0x00
+  [PASS] vec 0001  op=ADD  a=0xFF b=0xFF  dut=0xFE ref=0xFE
+  [PASS] vec 0002  op=SUB  a=0x05 b=0x05  dut=0x00 ref=0x00
+  [PASS] vec 0003  op=SUB  a=0x03 b=0x09  dut=0xFA ref=0xFA
+  [PASS] vec 0004  op=AND  a=0x00 b=0x00  dut=0x00 ref=0x00
+  [PASS] vec 0005  op=AND  a=0xFF b=0xFF  dut=0xFF ref=0xFF
+...
+416/416 passed · 0 bug(s) logged · coverage 87.5%
